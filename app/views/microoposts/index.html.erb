@@ -1,0 +1,27 @@
+<h1>Listing microoposts</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>String</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @microoposts.each do |microopost| %>
+  <tr>
+    <td><%= microopost.content %></td>
+    <td><%= microopost.string %></td>
+    <td><%= microopost.user_id %></td>
+    <td><%= link_to 'Show', microopost %></td>
+    <td><%= link_to 'Edit', edit_microopost_path(microopost) %></td>
+    <td><%= link_to 'Destroy', microopost, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Microopost', new_microopost_path %>
